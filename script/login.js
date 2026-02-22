@@ -11,6 +11,8 @@ document.getElementById('login-btn')
 //   3. match pin and number
     if(contactNumber === '01868000000' && pinDigit === '1234'){
         alert('Login Success');
+        // window.location.replace("./home.html") ;
+        window.location.assign("./home.html") ;
     }
 
 //   4. 3-1 true:::>> alert> homepage
