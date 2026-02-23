@@ -22,6 +22,22 @@ document.getElementById('pay-now-btn')
     if(pin === '1234'){
     alert('Pay Bill Successfully');
     setBalance(newBalance);
+
+     // 1- history-container ke dhore niye ashbo
+    const history = document.getElementById('history-container')
+    // 2- new div create korbo
+    const newHistory = document.createElement('div');
+    // 3- new div a innerHTML add korbo
+    newHistory.innerHTML =`
+    <div class="Transaction-card p-5 bg-base-100">
+
+    Pay Bill ${billAmount} Successfully For 
+        ${billSelect} at ${new Date()}, From ${billerAccount} 
+                
+            </div>
+    `
+    // 4- history-container e newDiv append korebo
+    history.append(newHistory);
     }
     else{
     alert('Invalid Pin')

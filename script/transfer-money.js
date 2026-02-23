@@ -19,8 +19,23 @@ document.getElementById('send-money')
     const pin = getValueFromInput('transfer-pin');
 
     if(pin === '1234'){
-        alert(`Transfer Cash Successfully at ${new Date()}`)
+        alert('Transfer Cash Successfully')
         setBalance(newBalance);
+
+        // 1- history-container ke dhore niye ashbo
+    const history = document.getElementById('history-container')
+    // 2- new div create korbo
+    const newHistory = document.createElement('div');
+    // 3- new div a innerHTML add korbo
+    newHistory.innerHTML =`
+    <div class="Transaction-card p-5 bg-base-100">
+
+    Transfer Cash ${transferAmount} Successfully From ${transferNumber} at ${new Date()}
+                
+            </div>
+    `
+    // 4- history-container e newDiv append korebo
+    history.append(newHistory);
     }
     else{
         alert('Invalid Pin')
