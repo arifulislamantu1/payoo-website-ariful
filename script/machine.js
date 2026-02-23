@@ -20,3 +20,19 @@ function setBalance(value){
 const currentBalance = document.getElementById('balance');
 currentBalance.innerText = value;
 }
+
+
+// machine id > hide all > show id
+
+function showOnly(id){
+    const addmoney = document.getElementById('add-money');
+    const cashout = document.getElementById('cashout');
+    // shobai k hide kore daw
+    addmoney.classList.add('hidden');
+    cashout.classList.add('hidden');
+
+    //  id wala element k show koro
+    const selected = document.getElementById(id);
+    selected.classList.remove('hidden')
+}
+
