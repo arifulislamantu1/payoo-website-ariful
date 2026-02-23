@@ -27,9 +27,11 @@ currentBalance.innerText = value;
 function showOnly(id){
     const addmoney = document.getElementById('add-money');
     const cashout = document.getElementById('cashout');
+    const sendmoney = document.getElementById('transfer-money');
     // shobai k hide kore daw
     addmoney.classList.add('hidden');
     cashout.classList.add('hidden');
+    sendmoney.classList.add('hidden');
 
     //  id wala element k show koro
     const selected = document.getElementById(id);

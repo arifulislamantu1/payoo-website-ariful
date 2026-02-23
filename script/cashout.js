@@ -9,9 +9,9 @@ document.getElementById('cashout').addEventListener('click', function(){
 
     const cashoutAmount =getValueFromInput('cashout-amount');
 
-    const currentBalance = getBalance('balance')
+    // const currentBalance = getBalance('balance')
 
-    const newBalance = currentBalance - Number(cashoutAmount);
+    const newBalance = getBalance() - Number(cashoutAmount);
 
     if( newBalance < 0){
     alert('Invalid Amount');
@@ -19,6 +19,7 @@ document.getElementById('cashout').addEventListener('click', function(){
     }
 
     const pin = getValueFromInput('cashout-pin');
+
     if(pin === '1234'){
         alert('Cashout Successful')
         setBalance(newBalance);

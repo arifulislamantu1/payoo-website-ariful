@@ -23,7 +23,7 @@ const newBalance = getBalance() + Number(amount);
 const pin = getValueFromInput('add-money-pin');
 if(pin === '1234'){
     alert(`Add Money Successfully From 
-        ${bankAccount} at ${new Date()}`)
+        ${bankAccount} at ${new Date()}`);
     setBalance(newBalance);
 }
 else{
