@@ -1,6 +1,6 @@
 // way 1
 
-document.getElementById('cashout').addEventListener('click', function(){
+document.getElementById('cashout-btn').addEventListener('click', function(){
     const cashoutNumber=getValueFromInput('cashout-number');
     if(cashoutNumber.length != 11){
         alert('Invalid Number')
@@ -9,9 +9,9 @@ document.getElementById('cashout').addEventListener('click', function(){
 
     const cashoutAmount =getValueFromInput('cashout-amount');
 
-    // const currentBalance = getBalance('balance')
+    const currentBalance = getBalance('balance')
 
-    const newBalance = getBalance() - Number(cashoutAmount);
+    const newBalance = currentBalance - Number(cashoutAmount);
 
     if( newBalance < 0){
     alert('Invalid Amount');
@@ -23,6 +23,21 @@ document.getElementById('cashout').addEventListener('click', function(){
     if(pin === '1234'){
         alert('Cashout Successful')
         setBalance(newBalance);
+
+        // 1- history-container ke dhore niye ashbo
+    const history = document.getElementById('history-container')
+    // 2- new div create korbo
+    const newHistory = document.createElement('div');
+    // 3- new div a innerHTML add korbo
+    newHistory.innerHTML =`
+    <div class="Transaction-card p-5 bg-base-100">
+
+    Cashout ${cashoutAmount} Successfully to 
+        ${cashoutNumber}, at ${new Date()}        
+            </div>
+    `
+    // 4- history-container e newDiv append korebo
+    history.append(newHistory);
     }
     else{
         alert('Invalid Pin')

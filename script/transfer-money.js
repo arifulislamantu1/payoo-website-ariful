@@ -19,7 +19,7 @@ document.getElementById('send-money')
     const pin = getValueFromInput('transfer-pin');
 
     if(pin === '1234'){
-        alert('Transfer Cash Successful')
+        alert(`Transfer Cash Successfully at ${new Date()}`)
         setBalance(newBalance);
     }
     else{
